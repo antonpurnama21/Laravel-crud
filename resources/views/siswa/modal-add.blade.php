@@ -9,7 +9,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <form action="/siswa/create" method="POST">
+	        <form action="{{ url('/siswa/create') }}" method="POST">
 	        	{{csrf_field()}}
 			  <div class="form-group row">
 			    <label for="nama_depan" class="col-sm-2 col-form-label">Nama Depan</label>
