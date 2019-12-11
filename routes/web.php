@@ -23,3 +23,6 @@ Route::post('/siswa/{id}/do_update','SiswaController@do_update');
 Route::get('/siswa/{id}/delete','SiswaController@delete');
 
 #End Route Siswa=======================
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

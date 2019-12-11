@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace BelajarLaravel;
 
 use Illuminate\Database\Eloquent\Model;
 

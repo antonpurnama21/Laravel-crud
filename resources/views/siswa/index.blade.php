@@ -1,17 +1,17 @@
-@extends('layout.master')
+@extends('layouts.app')
 
 @section('content')
 
   		@if(session('sukses'))
-  		<div class="alert alert-success mt-2" role="alert">
+  		<div class="alert alert-success" role="alert">
 		  {{session('sukses')}}
 		</div>
 		@elseif(session('gagal'))
-		<div class="alert alert-danger mt-2" role="alert">
+		<div class="alert alert-danger" role="alert">
 		  {{session('gagal')}}
 		</div>
 		@endif
-  		<div class="row mt-2">
+  		<div class="row">
   			<div class="col-6">
   				<h1>Data Siswa!</h1>
   			</div>

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace BelajarLaravel\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use BelajarLaravel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ConfirmsPasswords;
 
 class ConfirmPasswordController extends Controller

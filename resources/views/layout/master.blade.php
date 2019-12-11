@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 </body>
 </html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Belajar Laravel</a>
+      <a class="navbar-brand" href="{{ url('/') }}">Belajar Laravel</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,10 +22,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="{{ url('/home') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/siswa">Siswa</a>
+            <a class="nav-link" href="{{ url('/siswa') }}">Siswa</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

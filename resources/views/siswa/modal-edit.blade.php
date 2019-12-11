@@ -1,3 +1,4 @@
+@foreach($data_siswa as $key)
 	<!-- Modal Edit -->
 	<div class="modal fade" id="viewmodal{{$key->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-xl" role="document">
@@ -67,3 +68,4 @@
 	    </div>
 	  </div>
 	</div>
+@endforeach

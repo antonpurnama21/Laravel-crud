@@ -1,20 +1,35 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace BelajarLaravel\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function index()
     {
-    	$data['data_siswa'] = \App\Siswa::all();
+    	$data['data_siswa'] = \BelajarLaravel\Siswa::all();
     	return view('siswa.index',$data);
     }
 
     public function create(Request $request)
     {
-    	$insert = \App\Siswa::create($request->all());
+    	$insert = \BelajarLaravel\Siswa::create($request->all());
     	if ($insert == TRUE) {
     		return redirect('\siswa')->with('sukses','Data berhasil diinput!');
     	}else{
@@ -25,13 +40,13 @@ class SiswaController extends Controller
 
     public function update($id = null)
     {
-    	$data['siswa'] = \App\Siswa::find($id);
+    	$data['siswa'] = \BelajarLaravel\Siswa::find($id);
     	return view('siswa.updateForm',$data);
     }
 
     public function do_update(Request $request, $id = null)
     {
-    	$siswa = \App\Siswa::find($id);
+    	$siswa = \BelajarLaravel\Siswa::find($id);
     	$update = $siswa->update($request->all());
 
     	if ($update == TRUE) {
@@ -43,7 +58,7 @@ class SiswaController extends Controller
 
     public function delete($id = null)
     {
-    	$siswa = \App\Siswa::find($id);
+    	$siswa = \BelajarLaravel\Siswa::find($id);
     	$delete = $siswa->delete();
 
     	if ($delete == TRUE) {
